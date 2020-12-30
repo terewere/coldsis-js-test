@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coldsis JS Test</title>
+	<style type="text/css">
+		body {
+			display: flex;height: 100vh;
+		}
+		div {
+			width: 300px;height: 300px;border: 4px solid #666;border-radius: 20px;padding: 20px;margin: auto;
+		}
+
+		#input, #click{
+			width: 100%;margin-top: 10px;padding: 10px;box-sizing: border-box;font-size: 20px;
+		}
+
+		#click {
+			border: none;background-color: tomato;color: #fff;
+		}
+		#text {
+			font-size: 20px;font-weight: bold;text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h2 style="text-align: center;color: tomato" >Coldsis JS Quiz</h2>
+		<input id="input" type="text" placeholder="Enter value">
+		<button id="click">Get Result</button>
+		<p id="text"></p>
+	</div>
+
+	<script type="text/javascript">
+		const in_put = document.getElementById('input')
+		const click = document.getElementById('click')
+		const text = document.getElementById('text')
+		
+		click.onclick = function(){
+			let number = Number(in_put.value)
+			let sum = 0
+			if (isNaN(number)) {
+				alert('please enter a number')
+			} else {
+				let inputSplit = number.toString().split('')
+				inputSplit.forEach(num => {
+					sum += parseInt(num)
+				})
+				text.innerHTML = 'The Result is ' + sum
+			}
+		}
+	</script>
+</body>
+</html>
